@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "12-tablas-digital",
+  "description": "Marketplace de plugins de 12 Tablas Digital para estudios juridicos argentinos.",
+  "owner": {
+    "name": "12 Tablas Digital",
+    "email": "gestion@12tablasdigital.com"
+  },
+  "plugins": [
+    {
+      "name": "12-tablas-laboral",
+      "source": "./plugins/12-tablas-laboral",
+      "description": "Suite de 21 skills para estudios laborales argentinos (parte trabajadora)."
+    }
+  ]
+}

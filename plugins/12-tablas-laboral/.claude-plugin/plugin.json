@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "12-tablas-laboral",
+  "version": "0.0.1",
+  "description": "Suite de 21 skills para estudios juridicos laborales argentinos, parte trabajadora: ficha de primera consulta, triage, jurisdiccion, instancia prejudicial, estrategia de caso, honorarios, telegramas, liquidacion indemnizatoria, demanda, nomina documental, ofrecimiento de prueba, escritos, analisis de contestacion, impugnacion pericial, preparacion testimonial, alegato, recurso de apelacion, investigacion juridica, plazos, comunicacion con clientes y anonimizacion. Cada skill lee el perfil del estudio y los modelos desde la carpeta del estudio sincronizada.",
+  "author": {
+    "name": "12 Tablas Digital",
+    "email": "gestion@12tablasdigital.com"
+  },
+  "keywords": [
+    "legal",
+    "laboral",
+    "argentina",
+    "parte-trabajadora",
+    "lct"
+  ]
+}
