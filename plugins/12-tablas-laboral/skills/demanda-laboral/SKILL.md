@@ -37,7 +37,7 @@ Volcá al escrito todo lo que haya: **ficha de primera consulta** (antigüedad, 
 
 ## Paso 4 — Elegir el modo de redacción
 
-Preguntá siempre, sin excepción: **"¿Redacto la demanda completa de una, o vamos armándola por bloques (hechos → derecho y liquidación → prueba ofrecida → petitorio) y los confirmás antes de armar el documento final?"** Si el perfil del estudio tiene un modo predefinido, mostralo como sugerencia dentro de la misma pregunta (ej: "...tu estudio suele usar 'por bloques', ¿seguimos así o preferís el otro modo para esta demanda?"), pero **nunca lo apliques en silencio sin que el abogado lo confirme para este caso puntual.**
+Preguntá siempre, sin excepción: **"¿Redacto la demanda completa de una, o vamos armándola por bloques (hechos → derecho → liquidación → prueba ofrecida → petitorio) y los confirmás antes de armar el documento final?"** Si el perfil del estudio tiene un modo predefinido, mostralo como sugerencia dentro de la misma pregunta (ej: "...tu estudio suele usar 'por bloques', ¿seguimos así o preferís el otro modo para esta demanda?"), pero **nunca lo apliques en silencio sin que el abogado lo confirme para este caso puntual.**
 
 ## Paso 5 — Redactar la demanda
 
@@ -53,11 +53,12 @@ Seguí la estructura del modelo y de `references/estructura-demanda.md`. Respet�
 **Modo por bloques:** redactá y mostrá un bloque a la vez, en este orden, y **no avances al siguiente sin una confirmación explícita del abogado** (silencio o un mensaje ambiguo no cuenta como aprobación — si no queda claro si aprobó o quiere ajustar algo, preguntalo):
 
 1. **Hechos** — el relato fáctico completo, consistente con el material del Paso 3.
-2. **Derecho y liquidación** — el encuadre jurídico aplicable a esos hechos ya confirmados, más el resumen de la liquidación.
-3. **Prueba ofrecida** — documental, confesional, testimonial, informativa, pericial y reserva del caso federal, según corresponda (ver `references/estructura-demanda.md`), coherente con los hechos y el derecho ya confirmados.
-4. **Petitorio** — coherente con los tres bloques anteriores.
+2. **Derecho** — el encuadre jurídico aplicable a esos hechos ya confirmados (normativa y jurisprudencia mínima y pertinente).
+3. **Liquidación** — los rubros y el cálculo, en dos bloques separados con totales propios (capital directo vs. rubros subsidiarios), conforme `references/estructura-demanda.md`.
+4. **Prueba ofrecida** — documental, confesional, testimonial, informativa, pericial y reserva del caso federal, según corresponda (ver `references/estructura-demanda.md`), coherente con los hechos, el derecho y la liquidación ya confirmados.
+5. **Petitorio** — coherente con los cuatro bloques anteriores.
 
-Una vez confirmados los cuatro bloques, consolidalos en el documento completo con el formato final del modelo — no los pegues sueltos, integralos como un escrito único y coherente — y mostralo entero antes de guardar.
+Una vez confirmados los cinco bloques, consolidalos en el documento completo con el formato final del modelo — no los pegues sueltos, integralos como un escrito único y coherente — y mostralo entero antes de guardar.
 
 ## Paso 6 — Guardar en la carpeta del cliente
 
