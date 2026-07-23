@@ -23,13 +23,15 @@ Identificá cuál corresponde (ver `references/supuestos-telegrama.md`): registr
 
 ## Paso 2 — Leer el modelo (carpeta local, solo lectura)
 
-Buscá en `modelos/telegramas/` el modelo del supuesto detectado (por palabra clave) y leelo: tomá su estructura, sus fórmulas de estilo, el articulado citado y las cláusulas de apercibimiento. Si no hay un modelo para ese supuesto, usá la estructura estándar de `references/supuestos-telegrama.md` y avisá. No modifiques el modelo.
+Listá (Glob) la carpeta `modelos/telegramas/` del estudio, elegí el modelo `.docx` que corresponde al supuesto detectado y extraé su texto con la skill `docx` (los modelos son Word `.docx`, no uses `Read` directo): tomá su estructura, sus fórmulas de estilo, el articulado citado y las cláusulas de apercibimiento. Si no hay un modelo para ese supuesto, usá la estructura estándar de `references/supuestos-telegrama.md` y avisá. No modifiques el modelo.
 
 ## Paso 3 — Pedir los datos del caso
 
 Pedí en una sola tanda: **trabajador/a (remitente)** nombre, DNI y domicilio; **empleador/a (destinatario)** denominación y domicilio donde se notifica; datos de la relación (ingreso, categoría/CCT, jornada, remuneración, situación registral); **hechos** que fundan la intimación; **objeto** concreto de cada intimación; **plazo** (si no se indica, usá el del perfil); y **apercibimiento**. Si falta un dato esencial (destinatario, objeto, plazo o apercibimiento), preguntalo antes de redactar.
 
 ## Paso 4 — Redactar
+
+**Brevedad (importante):** el telegrama / carta documento es un formulario del Correo (ley 23.789), no un escrito judicial. Redactá seco y al punto — relato sucinto, intimación concreta, plazo y apercibimiento — sin recitales, sin fundamentos doctrinarios ni citas extensas. Ante la duda, más corto.
 
 Seguí la forma del modelo: encabezado con remitente y destinatario; cuerpo intimatorio con relato sucinto; cada intimación con su **plazo expreso** y su **apercibimiento**, citando el articulado pertinente (art. 11 ley 24.013, arts. 242 y 246 LCT, art. 80 LCT y dec. 146/01, etc.). Texto continuo, sin formato decorativo. Cerrá con el pie de firma del estudio (y los datos de contacto si el perfil lo indica).
 
@@ -52,4 +54,4 @@ El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)
 
 ## Lectura de documentos ya generados (Word .docx)
 
-Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. `perfil_estudio.md` está en `.md` y se lee con `Read` normal. **Los modelos del estudio (todo lo que cuelga de `modelos/`) están en Word `.docx`: extraé su texto con la skill `docx`, nunca con `Read` directo (un `.docx` abierto con `Read` devuelve el binario comprimido, no el texto).** La única salida/insumo que no es `.docx` es la calculadora de liquidación, que es Excel `.xlsx`. Si algún modelo puntual estuviera en `.md`, ese sí se lee con `Read`.

@@ -31,7 +31,7 @@ Leé `perfil_estudio.md` con Read. Tomá los criterios de cálculo del estudio: 
 
 ## Paso 1 — Tomar la plantilla del estudio (solo lectura)
 
-Buscá la **calculadora modelo** del estudio en `modelos/liquidaciones/` (un Excel con las fórmulas ya armadas y celdas de input) y leela. Esa es la base; **no la modifiques**. Si no estuviera, usá como respaldo la estructura y las fórmulas de `references/formulas-liquidacion.md`.
+Buscá la **calculadora modelo** del estudio en `modelos/liquidaciones/` (un Excel con las fórmulas ya armadas y celdas de input) y abrila con la skill `xlsx` (es Excel `.xlsx`, no uses `Read` directo). Esa es la base; **no la modifiques**. Si no estuviera, usá como respaldo la estructura y las fórmulas de `references/formulas-liquidacion.md`.
 
 ## Paso 2 — Pedir los datos del caso
 
@@ -69,4 +69,4 @@ Las fórmulas exactas de cada rubro están en `references/formulas-liquidacion.m
 
 ## Lectura de documentos ya generados (Word .docx)
 
-Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. `perfil_estudio.md` está en `.md` y se lee con `Read` normal. **Los modelos del estudio (todo lo que cuelga de `modelos/`) están en Word `.docx`: extraé su texto con la skill `docx`, nunca con `Read` directo (un `.docx` abierto con `Read` devuelve el binario comprimido, no el texto).** La única salida/insumo que no es `.docx` es la calculadora de liquidación, que es Excel `.xlsx`. Si algún modelo puntual estuviera en `.md`, ese sí se lee con `Read`.
