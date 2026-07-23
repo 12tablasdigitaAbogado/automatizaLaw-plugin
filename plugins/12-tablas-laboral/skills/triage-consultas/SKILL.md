@@ -41,3 +41,7 @@ Se nutre de la **ficha de primera consulta** si ya existe (ver Paso 1). Si todav
 ## Nota de verificación
 
 Al terminar, indicá qué filtros del perfil aplicaste y qué datos te faltaron. Es una recomendación interna; la toma de la causa la decide el abogado.
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

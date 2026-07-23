@@ -55,3 +55,11 @@ Se nutre del **perfil del estudio** (fuente primaria) y, en su ausencia, de **Ju
 ## Nota de verificación
 
 Al terminar, indicá: si la respuesta vino del perfil del estudio o de la referencia verificada (Nación/CABA, PBA, Córdoba), o si quedó marcada como no verificada. Si fue esto último, recordá sugerir que se cargue en el perfil una vez confirmada. Es un chequeo de camino procesal, no un dictamen legal — la decisión de cómo tramitarlo es del abogado.
+
+## Formato del archivo de salida (Word .docx)
+
+El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)**, nunca en `.md` ni en texto plano. Generá el `.docx` con la skill `docx` a partir del texto ya redactado, respetando el formato del escrito (encabezado, cuerpo, firma). El nombre del archivo lleva la extensión `.docx`. Como la carpeta del estudio está sincronizada con Google Drive, el `.docx` queda disponible ahí y el abogado lo abre y edita directamente en Google Docs. (La única salida del plugin que no es `.docx` es la liquidación, que es una planilla Excel.)
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

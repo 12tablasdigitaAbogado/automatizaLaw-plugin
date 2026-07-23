@@ -57,7 +57,7 @@ Guardá el Excel nuevo con Write en la carpeta del cliente (`clientes/<cliente>/
 1. Identificá de qué **cliente / expediente** es la salida. Si no surge claro del contexto, preguntalo (nombre del cliente o carátula).
 2. Buscá (Glob) la carpeta de ese cliente dentro de `clientes/` en la raíz del estudio.
 3. Si **existe**, guardá ahí. Si **no existe**, creala dentro de `clientes/` y después guardá.
-4. Nombrá el archivo de forma descriptiva: `<tipo>-<cliente>-<AAAA-MM-DD>`. Nunca mezcles archivos de distintos clientes ni pises uno existente.
+4. Nombrá el archivo de forma descriptiva: `<tipo>-<cliente>-<AAAA-MM-DD>.xlsx`. Nunca mezcles archivos de distintos clientes ni pises uno existente.
 
 ## Nota de verificación
 
@@ -66,3 +66,7 @@ Al terminar, indicá: qué perfil y qué plantilla usaste, qué criterios aplica
 ## Referencia
 
 Las fórmulas exactas de cada rubro están en `references/formulas-liquidacion.md`.
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

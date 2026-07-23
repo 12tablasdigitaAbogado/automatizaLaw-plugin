@@ -43,7 +43,7 @@ Entregá el borrador en la respuesta y guardalo como archivo **nuevo** en la car
 1. Identificá de qué **cliente / expediente** es la salida. Si no surge claro del contexto, preguntalo (nombre del cliente o carátula).
 2. Buscá (Glob) la carpeta de ese cliente dentro de `clientes/`.
 3. Si **existe**, guardá ahí. Si **no existe**, creala dentro de `clientes/` y después guardá.
-4. Nombrá el archivo de forma descriptiva: `<tipo>-<cliente>-<AAAA-MM-DD>`. Nunca mezcles archivos de distintos clientes ni pises uno existente.
+4. Nombrá el archivo de forma descriptiva: `<tipo>-<cliente>-<AAAA-MM-DD>.docx`. Nunca mezcles archivos de distintos clientes ni pises uno existente.
 
 ## Nota de verificación
 
@@ -52,3 +52,11 @@ Al terminar, indicá qué modelo del estudio usaste, si leíste el perfil, qué 
 ## Conexión con otras skills
 
 Se nutre de **Liquidación de Rubros** (para contrastar el cálculo pericial contra el propio) y de la **Demanda** (los puntos de pericia ofrecidos). Si hace falta fundamento jurídico que no esté en el perfil, complementá con **Investigación Jurídica**.
+
+## Formato del archivo de salida (Word .docx)
+
+El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)**, nunca en `.md` ni en texto plano. Generá el `.docx` con la skill `docx` a partir del texto ya redactado, respetando el formato del escrito (encabezado, cuerpo, firma). El nombre del archivo lleva la extensión `.docx`. Como la carpeta del estudio está sincronizada con Google Drive, el `.docx` queda disponible ahí y el abogado lo abre y edita directamente en Google Docs. (La única salida del plugin que no es `.docx` es la liquidación, que es una planilla Excel.)
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
