@@ -23,7 +23,7 @@ Determiná cuál de los escritos de trámite del catálogo (`references/catalogo
 
 ## Paso 2 — Leer el modelo (carpeta local, solo lectura)
 
-Buscá por nombre el modelo de ese escrito en `modelos/escritos/` y leelo. Tomá su estructura, fórmulas, articulado y formato. No modifiques el modelo.
+Listá (Glob) la carpeta `modelos/escritos/`, elegí el modelo `.docx` de ese escrito y extraé su texto con la skill `docx` (los modelos son Word `.docx`, no uses `Read` directo). Tomá su estructura, fórmulas, articulado y formato. No modifiques el modelo.
 
 **Si no hay un modelo, pero el tipo de escrito SÍ está en el catálogo** (`references/catalogo-escritos.md`): avisá y ofrecele al abogado dos caminos — **(a) armarlo ahí mismo**, usando la estructura y el articulado estándar del catálogo como base legal, con el estilo que ya conozcas del estudio (pie de firma, tono, por otros escritos que sí tenga modelados); o **(b) que pegue o suba un modelo propio** que tenga a mano (de otra fuente, no necesariamente guardado en el sistema) — en ese caso usalo solo como base de **forma y estilo** para este escrito puntual; el contenido legal sustantivo (articulado, plazos, apercibimientos) seguí sacándolo del catálogo verificado, no de lo que traiga el modelo pegado si difiere. Esto es para este documento puntual del caso — **no lo guardes en `modelos/` como modelo del estudio** a menos que el abogado te lo pida explícitamente.
 
@@ -58,4 +58,4 @@ El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)
 
 ## Lectura de documentos ya generados (Word .docx)
 
-Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. `perfil_estudio.md` está en `.md` y se lee con `Read` normal. **Los modelos del estudio (todo lo que cuelga de `modelos/`) están en Word `.docx`: extraé su texto con la skill `docx`, nunca con `Read` directo (un `.docx` abierto con `Read` devuelve el binario comprimido, no el texto).** La única salida/insumo que no es `.docx` es la calculadora de liquidación, que es Excel `.xlsx`. Si algún modelo puntual estuviera en `.md`, ese sí se lee con `Read`.

@@ -17,7 +17,7 @@ Antes de nada, buscá (Glob/Grep) y leé con Read `perfil_estudio.md` en la carp
 
 ## Paso 1 — Leer el modelo (carpeta local, solo lectura)
 
-Buscá en `modelos/escritos/` el modelo de alegato del estudio (por palabra clave) y leelo: tomá su estructura, estilo argumentativo y forma de organizar el mérito de la prueba. Si no hay un modelo para esto, usá la estructura estándar del Paso 4 y avisá. No modifiques el modelo.
+Listá (Glob) la carpeta `modelos/escritos/`, elegí el modelo `.docx` de alegato y extraé su texto con la skill `docx` (los modelos son Word `.docx`, no uses `Read` directo): tomá su estructura, estilo argumentativo y forma de organizar el mérito de la prueba. Si no hay un modelo para esto, usá la estructura estándar del Paso 4 y avisá. No modifiques el modelo.
 
 ## Paso 2 — Reunir la prueba producida
 
@@ -54,4 +54,4 @@ El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)
 
 ## Lectura de documentos ya generados (Word .docx)
 
-Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. `perfil_estudio.md` está en `.md` y se lee con `Read` normal. **Los modelos del estudio (todo lo que cuelga de `modelos/`) están en Word `.docx`: extraé su texto con la skill `docx`, nunca con `Read` directo (un `.docx` abierto con `Read` devuelve el binario comprimido, no el texto).** La única salida/insumo que no es `.docx` es la calculadora de liquidación, que es Excel `.xlsx`. Si algún modelo puntual estuviera en `.md`, ese sí se lee con `Read`.

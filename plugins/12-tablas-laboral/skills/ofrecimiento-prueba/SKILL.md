@@ -51,7 +51,7 @@ No ofrezcas prueba que no exista o que no se pueda producir realmente — si fal
 
 ## Paso 3 — Redactar el escrito
 
-Buscá el modelo del estudio en `modelos/escritos/` (si existe uno para ofrecimiento de prueba); si no hay, usá una estructura estándar: objeto, prueba ofrecida organizada por tipo (documental, testimonial con los testigos y su domicilio si corresponde, pericial con los puntos, confesional, informativa), y petitorio. Mostralo y guardalo como archivo nuevo en `clientes/<cliente>/`.
+Buscá el modelo del estudio en `modelos/escritos/` (si existe uno para ofrecimiento de prueba) y, si lo hay, extraé su texto con la skill `docx` (es Word `.docx`, no uses `Read` directo); si no hay, usá una estructura estándar: objeto, prueba ofrecida organizada por tipo (documental, testimonial con los testigos y su domicilio si corresponde, pericial con los puntos, confesional, informativa), y petitorio. Mostralo y guardalo como archivo nuevo en `clientes/<cliente>/`.
 
 ## Guardrails duros (no negociar)
 
@@ -73,4 +73,4 @@ El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)
 
 ## Lectura de documentos ya generados (Word .docx)
 
-Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. `perfil_estudio.md` está en `.md` y se lee con `Read` normal. **Los modelos del estudio (todo lo que cuelga de `modelos/`) están en Word `.docx`: extraé su texto con la skill `docx`, nunca con `Read` directo (un `.docx` abierto con `Read` devuelve el binario comprimido, no el texto).** La única salida/insumo que no es `.docx` es la calculadora de liquidación, que es Excel `.xlsx`. Si algún modelo puntual estuviera en `.md`, ese sí se lee con `Read`.
