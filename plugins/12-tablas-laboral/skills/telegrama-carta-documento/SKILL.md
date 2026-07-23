@@ -40,8 +40,16 @@ Entregá el texto en el chat y guardalo como archivo nuevo en la carpeta del cli
 1. Identificá de qué cliente/expediente es; si no surge, preguntá.
 2. Buscá por nombre la carpeta del cliente dentro de `clientes/`.
 3. Si existe, guardá ahí; si no, creala (o pedí que la creen) y guardá.
-4. Nombrá el archivo `telegrama-<supuesto>-<cliente>-<AAAA-MM-DD>`. No pises nada ni mezcles clientes.
+4. Nombrá el archivo `telegrama-<supuesto>-<cliente>-<AAAA-MM-DD>.docx`. No pises nada ni mezcles clientes.
 
 ## Nota de verificación
 
 Al terminar, indicá: el/los supuesto(s), qué modelo del estudio usaste (o que no había), qué datos te faltaron, el plazo y el apercibimiento, y dónde guardaste el borrador. Es **borrador para revisión y firma del abogado**.
+
+## Formato del archivo de salida (Word .docx)
+
+El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)**, nunca en `.md` ni en texto plano. Generá el `.docx` con la skill `docx` a partir del texto ya redactado, respetando el formato del escrito (encabezado, cuerpo, firma). El nombre del archivo lleva la extensión `.docx`. Como la carpeta del estudio está sincronizada con Google Drive, el `.docx` queda disponible ahí y el abogado lo abre y edita directamente en Google Docs. (La única salida del plugin que no es `.docx` es la liquidación, que es una planilla Excel.)
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

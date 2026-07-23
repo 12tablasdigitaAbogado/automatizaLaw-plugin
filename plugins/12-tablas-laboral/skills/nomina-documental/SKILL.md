@@ -60,7 +60,7 @@ Armá la nómina en el orden que indique el perfil para ese fuero/organismo — 
 
 Mostrá la nómina completa en una tabla: **# | Documento | Disponible/Faltante | Archivo (si existe)**. Arriba de todo, un resumen de cuántos ítems faltan y cuáles son — eso es lo que el abogado necesita ver primero, no el listado completo.
 
-Guardá la nómina como archivo nuevo en la carpeta del cliente: `nomina-documental-<cliente>-<AAAA-MM-DD>`. No pises nada ni mezcles clientes.
+Guardá la nómina como archivo nuevo en la carpeta del cliente: `nomina-documental-<cliente>-<AAAA-MM-DD>.docx`. No pises nada ni mezcles clientes.
 
 ## Guardrails duros (no negociar)
 
@@ -76,3 +76,11 @@ Se nutre de **Demanda Laboral** (la prueba documental ofrecida), **Liquidación 
 ## Nota de verificación
 
 Al terminar, indicá: cuántos ítems cruzaste, cuántos están disponibles y cuántos faltan (con el detalle de cada faltante), si pudiste leer el perfil, y qué orden de fuero aplicaste. El orden de Nación/CABA y Provincia de Buenos Aires está investigado sobre fuentes oficiales (Acordadas CSJN, SCBA); el de Córdoba y el de cualquier otra jurisdicción no listada es orientativo, no verificado fuero por fuero — decilo explícitamente cuando se use. Es un checklist de control previo a la presentación — la decisión de presentar igual, con lo que falta pendiente, es del abogado.
+
+## Formato del archivo de salida (Word .docx)
+
+El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)**, nunca en `.md` ni en texto plano. Generá el `.docx` con la skill `docx` a partir del texto ya redactado, respetando el formato del escrito (encabezado, cuerpo, firma). El nombre del archivo lleva la extensión `.docx`. Como la carpeta del estudio está sincronizada con Google Drive, el `.docx` queda disponible ahí y el abogado lo abre y edita directamente en Google Docs. (La única salida del plugin que no es `.docx` es la liquidación, que es una planilla Excel.)
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

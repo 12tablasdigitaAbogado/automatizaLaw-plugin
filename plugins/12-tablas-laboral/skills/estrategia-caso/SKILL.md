@@ -55,3 +55,11 @@ Se apoya en **Investigación Jurídica** para la verificación de jurisprudencia
 ## Nota de verificación
 
 Al terminar, indicá: qué variables del caso tuviste en cuenta (y cuáles te faltaron), qué búsquedas hiciste para verificar jurisprudencia/doctrina y qué encontraste (o que no encontraste nada verificable), y repetí que es un análisis estratégico de IA, no asesoramiento legal — la decisión final es del abogado.
+
+## Formato del archivo de salida (Word .docx)
+
+El archivo que guardás en la carpeta del cliente va **siempre en Word (`.docx`)**, nunca en `.md` ni en texto plano. Generá el `.docx` con la skill `docx` a partir del texto ya redactado, respetando el formato del escrito (encabezado, cuerpo, firma). El nombre del archivo lleva la extensión `.docx`. Como la carpeta del estudio está sincronizada con Google Drive, el `.docx` queda disponible ahí y el abogado lo abre y edita directamente en Google Docs. (La única salida del plugin que no es `.docx` es la liquidación, que es una planilla Excel.)
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.

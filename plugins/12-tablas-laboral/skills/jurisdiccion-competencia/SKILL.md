@@ -40,3 +40,7 @@ El resultado condiciona la **Demanda** (fuero, carátula, organismo). Antes de e
 ## Nota de verificación
 
 Al terminar, indicá qué reglas del perfil aplicaste, qué puntos de conexión usaste y qué te faltó. Recomendación interna para el criterio del abogado.
+
+## Lectura de documentos ya generados (Word .docx)
+
+Los documentos que el estudio ya generó y guardó antes en `clientes/<cliente>/` (ficha, demanda, análisis de contestación, escritos, etc.) están en Word (`.docx`). Para leer su contenido, extraé el texto con la skill `docx`; **no uses `Read` directo sobre un `.docx`**, porque devuelve el binario comprimido y no el texto legible. Los archivos del cerebro del estudio (`perfil_estudio.md` y todo lo que cuelga de `modelos/`) siguen en `.md` y se leen con `Read` normal.
